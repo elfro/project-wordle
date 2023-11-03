@@ -5,7 +5,7 @@ function BannerHappy({ count }) {
     <div className="happy banner">
       <p>
         <strong>Congratulations!</strong> Got it in{' '}
-        <strong>{count} guesses</strong>.
+        <strong>{count === 1 ? '1 guess' : `${count} guesses`}</strong>.
       </p>
     </div>
   );

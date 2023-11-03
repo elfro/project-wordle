@@ -3,12 +3,15 @@ import React from 'react';
 function Guess({ guess }) {
   return (
     <p className="guess">
-      {guess.map((item) => (
-        <span key={item.id} className={`cell ${item.status}`}>
-          {' '}
-          {item.letter}
-        </span>
-      ))}
+      {guess.map((item) => {
+        const className = item.status ? `cell ${item.status}` : 'cell';
+        return (
+          <span key={item.id} className={className}>
+            {' '}
+            {item.letter}
+          </span>
+        );
+      })}
     </p>
   );
 }

@@ -13,7 +13,7 @@ function Keyboard() {
 
   return (
     // ToDo: fix layout, wrap in div
-    <>
+    <div>
       {keyboard.map((row, index) => (
         <div key={`row-${index}`} className="keyboard-row">
           {row.map((button) => {
@@ -32,7 +32,7 @@ function Keyboard() {
           })}
         </div>
       ))}
-    </>
+    </div>
   );
 }
 

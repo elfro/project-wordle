@@ -163,10 +163,6 @@ h1 {
   margin-bottom: 4px;
 }
 
-.keyboard-row:not(:last-child) {
-  margin-bottom: -28px;
-}
-
 .keyboard-button {
   position: relative;
   width: 8%;

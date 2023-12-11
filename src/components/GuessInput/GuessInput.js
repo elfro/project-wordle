@@ -1,9 +1,16 @@
 import React from 'react';
 import { MAX_WORD_LENGTH, MIN_WORD_LENGTH } from '../../constants';
+import { GameContext } from '../GameProvider';
 
-function GuessInput({ onSubmit }) {
+function GuessInput() {
   const emptyString = '';
   const [word, setWord] = React.useState(emptyString);
+  const { handleGuessInput } = React.useContext(GameContext);
+  const inputRef = React.useRef();
+
+  React.useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   return (
     <form
@@ -13,12 +20,13 @@ function GuessInput({ onSubmit }) {
         if (word === emptyString) {
           return;
         }
-        onSubmit(word);
+        handleGuessInput(word);
         setWord(emptyString);
       }}
     >
       <label htmlFor="guess-input">Enter guess:</label>
       <input
+        ref={inputRef}
         id="guess-input"
         type="text"
         pattern={`.{${MIN_WORD_LENGTH},${MAX_WORD_LENGTH}}`}

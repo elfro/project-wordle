@@ -1,7 +1,9 @@
 import React from 'react';
 import Guess from '../Guess';
+import { GameContext } from '../GameProvider';
 
-function GuessesResults({ guesses }) {
+function GuessesResults() {
+  const { guesses } = React.useContext(GameContext);
   return (
     <div className="guess-results">
       {guesses.map((guess, i) => (

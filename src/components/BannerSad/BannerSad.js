@@ -1,12 +1,13 @@
 import React from 'react';
+import Banner from '../Banner';
 
 function BannerSad({ answer }) {
   return (
-    <div className="sad banner">
+    <Banner className="sad" isVisible>
       <p>
         Sorry, the correct answer is <strong>{answer}</strong>.
       </p>
-    </div>
+    </Banner>
   );
 }
 

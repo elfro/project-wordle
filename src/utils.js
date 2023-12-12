@@ -13,3 +13,21 @@ export const range = (start, end, step = 1) => {
   }
   return output;
 };
+
+export const flatArray = (arr, n = 1) => {
+  if (n === 0) {
+    return arr;
+  }
+
+  const resultArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      resultArr.push(...flatArray(arr[i], n - 1));
+      continue;
+    }
+
+    resultArr.push(arr[i]);
+  }
+
+  return resultArr;
+};

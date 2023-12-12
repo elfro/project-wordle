@@ -1,6 +1,6 @@
 import React from 'react';
-import { MAX_WORD_LENGTH, MIN_WORD_LENGTH } from '../../constants';
 import { GameContext } from '../GameProvider';
+import { MAX_WORD_LENGTH, MIN_WORD_LENGTH } from '../../constants';
 
 function GuessInput() {
   const emptyString = '';
@@ -29,7 +29,8 @@ function GuessInput() {
         ref={inputRef}
         id="guess-input"
         type="text"
-        pattern={`.{${MIN_WORD_LENGTH},${MAX_WORD_LENGTH}}`}
+        required
+        pattern={`\\S{${MIN_WORD_LENGTH},${MAX_WORD_LENGTH}}`}
         title={`From ${MIN_WORD_LENGTH} to ${MAX_WORD_LENGTH} characters`}
         value={word}
         onChange={(event) => {

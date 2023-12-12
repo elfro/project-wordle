@@ -12,7 +12,6 @@ function Keyboard() {
   const letters = getLetters(guesses);
 
   return (
-    // ToDo: fix layout, wrap in div
     <div>
       {keyboard.map((row, index) => (
         <div key={`row-${index}`} className="keyboard-row">

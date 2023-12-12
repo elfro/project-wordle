@@ -1,6 +1,6 @@
 import React from 'react';
 
-function useKeyDownHook(key, callback) {
+function useKeyDown(key, callback) {
   React.useEffect(() => {
     function handleKeyDown(event) {
       if (event.code === key) {
@@ -16,4 +16,4 @@ function useKeyDownHook(key, callback) {
   }, [key, callback]);
 }
 
-export default useKeyDownHook;
+export default useKeyDown;

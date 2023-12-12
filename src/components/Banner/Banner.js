@@ -1,6 +1,6 @@
 import React from 'react';
 import { X } from 'react-feather';
-import useKeyDownHook from '../../hooks/useKeyDownHook';
+import useKeyDown from '../../hooks/useKeyDown';
 
 function Banner({ isVisible, className = '', children }) {
   const [isBannerOpen, setIsBannerOpen] = React.useState(isVisible);
@@ -8,7 +8,7 @@ function Banner({ isVisible, className = '', children }) {
     setIsBannerOpen(false);
   }, []);
 
-  useKeyDownHook('Escape', closeBanner);
+  useKeyDown('Escape', closeBanner);
 
   return (
     <>

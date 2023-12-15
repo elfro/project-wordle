@@ -20,6 +20,7 @@ function generateEmptyWordsGrid() {
 const emptyWordsGrid = generateEmptyWordsGrid();
 
 const makeInitialState = () => ({
+  id: crypto.randomUUID(),
   answer: sample(WORDS),
   guesses: emptyWordsGrid,
   status: GAME_STATUSES.PLAYING,

@@ -5,12 +5,12 @@ import { MAX_WORD_LENGTH, MIN_WORD_LENGTH } from '../../constants';
 function GuessInput() {
   const emptyString = '';
   const [word, setWord] = React.useState(emptyString);
-  const { handleGuessInput } = React.useContext(GameContext);
+  const { id: gameId, handleGuessInput } = React.useContext(GameContext);
   const inputRef = React.useRef();
 
   React.useEffect(() => {
     inputRef.current.focus();
-  }, []);
+  }, [gameId]);
 
   return (
     <form
